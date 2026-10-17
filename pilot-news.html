@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>领航资讯 - 快雷Go国际网络工程与前沿技术专栏</title>
+  <meta name="description" content="快雷Go官方领航资讯专栏，深度聚焦跨洋海底光缆路由拓扑、BGP/Anycast高可用架构、TCP BBRv3拥塞控制调优及原生住宅IP跨境风控对抗实务。">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- 顶部状态遥测条 -->
+  <div class="boats-telemetry-bar">
+    <div class="boats-container boats-telemetry-flex">
+      <div class="boats-status-indicator">
+        <span class="boats-status-pip"></span>
+        <span>快雷Go网络工程实验室 · 国际专线领航资讯前沿</span>
+      </div>
+      <div>
+        <a href="index.html" style="color: var(--color-primary-light);">返回快雷Go首页 &rarr;</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- 领航主导航栏 -->
+  <header class="boats-header">
+    <div class="boats-container boats-nav-wrap">
+      <a href="index.html" class="boats-logo" aria-label="快雷Go首页">
+        <svg class="boats-logo-svg" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="24" cy="24" r="22" stroke="#0284c7" stroke-width="1.8" stroke-dasharray="4 3"/>
+          <path d="M24 6L28 18H36L26 26L30 38L18 24H24L20 14L24 6Z" fill="#0284c7" stroke="#38bdf8" stroke-width="1.5"/>
+          <path d="M10 32C14 28 20 28 24 32C28 36 34 36 38 32" stroke="#f59e0b" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+        <div class="boats-logo-text">
+          <span class="boats-logo-brand">快雷Go</span>
+          <span class="boats-logo-sub">PILOT NEWS · 领航资讯</span>
+        </div>
+      </a>
+      
+      <!-- 纯CSS原生汉堡切换器 -->
+      <input type="checkbox" id="boats-toggle" class="boats-nav-toggle" aria-label="展开导航菜单">
+      <label for="boats-toggle" class="boats-hamburger" aria-label="切换主菜单">
+        <span></span>
+        <span></span>
+        <span></span>
+      </label>
+
+      <nav class="boats-nav-menu">
+        <a href="index.html" class="boats-nav-link">官网首页</a>
+        <a href="index.html#advantages" class="boats-nav-link">专线优势</a>
+        <a href="index.html#streaming-ai" class="boats-nav-link">影音与AI</a>
+        <a href="index.html#pricing" class="boats-nav-link">套餐方案</a>
+        <a href="index.html#faq" class="boats-nav-link">疑难解答</a>
+        <a href="pilot-news.html" class="boats-nav-link">领航资讯</a>
+        <label for="boats-toggle" class="boats-menu-close-btn">✕ 收起导航菜单</label>
+      </nav>
+
+      <div class="boats-nav-actions">
+        <a href="https://ww012.twilightaff.com/#/?code=A56DH1Af" target="_blank" rel="nofollow" class="btn-boats btn-boats-primary">开启极速专线</a>
+      </div>
+    </div>
+    <!-- 移动端专属横向滑动导航条：保证在手机视口下导航菜单始终醒目可见、永不缺失 -->
+    <nav class="boats-mobile-subnav" aria-label="移动端领航快速导航">
+      <div class="boats-container boats-mobile-subnav-scroll">
+        <a href="index.html" class="boats-subnav-pill">官网首页</a>
+        <a href="index.html#advantages" class="boats-subnav-pill">专线优势</a>
+        <a href="index.html#pricing" class="boats-subnav-pill">套餐方案</a>
+        <a href="index.html#faq" class="boats-subnav-pill">疑难解答</a>
+        <a href="pilot-news.html" class="boats-subnav-pill">领航资讯</a>
+      </div>
+    </nav>
+  </header>
+
+  <div class="boats-page-header">
+    <div class="boats-container">
+      <h1 class="boats-page-title">领航资讯 · 深度技术专栏</h1>
+      <div class="boats-breadcrumb">
+        <a href="index.html">首页</a> &gt; 领航资讯
+      </div>
+    </div>
+  </div>
+
+  <main class="boats-page-content">
+    <div class="boats-container">
+      <div class="boats-grid-3">
+        <!-- 专栏卡片 1 -->
+        <div class="boats-card-telemetry">
+          <span class="boats-feature-badge">SPEED REPORT</span>
+          <h3 class="boats-card-title"><a href="kuaileigo-speed-benchmark-report.html">快雷Go旗舰专线实测报告：长距离海缆吞吐与晚高峰无损加速全解析</a></h3>
+          <p class="boats-card-desc">全景解构快雷Go旗舰专线在晚高峰4K秒开、长距离海缆直连及高并发长连接压测中的实战表现。</p>
+          <div class="boats-feature-meta" style="margin-top: 16px;">
+            <span>发布日期：2026-03-20</span>
+            <a href="kuaileigo-speed-benchmark-report.html" style="color: var(--color-amber);">阅读全文 &rarr;</a>
+          </div>
+        </div>
+
+        <!-- 专栏卡片 2 -->
+        <div class="boats-card-telemetry">
+          <span class="boats-feature-badge">FIBER ROUTING</span>
+          <h3 class="boats-card-title"><a href="transpacific-fiber-routing-guide.html">跨太平洋海底光缆走向与中继放大：长肥网络物理延迟压制实务</a></h3>
+          <p class="boats-card-desc">深入分析跨太平洋海缆登陆点分布与路由跳数对端到端延迟的决定性影响。</p>
+          <div class="boats-feature-meta" style="margin-top: 16px;">
+            <span>发布日期：2026-03-18</span>
+            <a href="transpacific-fiber-routing-guide.html" style="color: var(--color-amber);">阅读全文 &rarr;</a>
+          </div>
+        </div>
+
+        <!-- 专栏卡片 3 -->
+        <div class="boats-card-telemetry">
+          <span class="boats-feature-badge">BGP ANYCAST</span>
+          <h3 class="boats-card-title"><a href="bgp-anycast-zero-downtime-network.html">Anycast与BGP动态收敛工程：骨干网突发断缆下的无感热迁移</a></h3>
+          <p class="boats-card-desc">解密BGP自愈协议如何协同Anycast广播技术，在海缆突发熔断时实现毫秒级平滑转导。</p>
+          <div class="boats-feature-meta" style="margin-top: 16px;">
+            <span>发布日期：2026-03-15</span>
+            <a href="bgp-anycast-zero-downtime-network.html" style="color: var(--color-amber);">阅读全文 &rarr;</a>
+          </div>
+        </div>
+
+        <!-- 专栏卡片 4 -->
+        <div class="boats-card-telemetry">
+          <span class="boats-feature-badge">TCP BBRv3</span>
+          <h3 class="boats-card-title"><a href="tcp-bbr-v3-high-throughput-tuning.html">从丢包反馈到带宽建模：TCP BBRv3在跨洋高丢包链路中的参数调优</a></h3>
+          <p class="boats-card-desc">实测对比经典CUBIC与最新BBRv3在10%非拥塞丢包长距离光缆环境下的带宽利用率跃迁。</p>
+          <div class="boats-feature-meta" style="margin-top: 16px;">
+            <span>发布日期：2026-03-12</span>
+            <a href="tcp-bbr-v3-high-throughput-tuning.html" style="color: var(--color-amber);">阅读全文 &rarr;</a>
+          </div>
+        </div>
+
+        <!-- 专栏卡片 5 -->
+        <div class="boats-card-telemetry">
+          <span class="boats-feature-badge">WIREGUARD TUNING</span>
+          <h3 class="boats-card-title"><a href="wireguard-udp-jitter-control-handbook.html">弱网环境下的隧道治理：WireGuard内核UDP包平滑与FEC校验实践</a></h3>
+          <p class="boats-card-desc">针对UDP隧道易遭受运营商QoS封锁与弱网丢包的问题，探讨FEC前向纠错与多路径平滑工程。</p>
+          <div class="boats-feature-meta" style="margin-top: 16px;">
+            <span>发布日期：2026-03-10</span>
+            <a href="wireguard-udp-jitter-control-handbook.html" style="color: var(--color-amber);">阅读全文 &rarr;</a>
+          </div>
+        </div>
+
+        <!-- 专栏卡片 6 -->
+        <div class="boats-card-telemetry">
+          <span class="boats-feature-badge">RESIDENTIAL IP</span>
+          <h3 class="boats-card-title"><a href="residential-isp-clean-ip-matrix.html">数据中心广播IP与原生家宽信誉对比：跨境访问风控对抗机制揭秘</a></h3>
+          <p class="boats-card-desc">揭秘主流流媒体平台与AI网关的风控指纹模型，阐述原生住宅IP池如何确保持久无阻访问。</p>
+          <div class="boats-feature-meta" style="margin-top: 16px;">
+            <span>发布日期：2026-03-08</span>
+            <a href="residential-isp-clean-ip-matrix.html" style="color: var(--color-amber);">阅读全文 &rarr;</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="boats-footer">
+    <div class="boats-container">
+      <ul class="boats-footer-links">
+        <li><a href="sitemap.html" class="boats-footer-link">网站地图</a></li>
+        <li><a href="about.html" class="boats-footer-link">关于我们</a></li>
+        <li><a href="terms.html" class="boats-footer-link">服务条款</a></li>
+        <li><a href="privacy.html" class="boats-footer-link">隐私政策</a></li>
+      </ul>
+      <div class="boats-copyright">
+        &copy; 2026 快雷Go (KuaiLeiGo.boats) 保留所有权利
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

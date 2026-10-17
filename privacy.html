@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>隐私政策 - 快雷Go国际航海级专线网络加速器</title>
+  <meta name="description" content="快雷Go隐私政策明确声明严格践行无日志记录规范（Zero Activity Logs Policy），全方位保障用户的网络数据安全与隐私权益。">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="boats-telemetry-bar">
+    <div class="boats-container boats-telemetry-flex">
+      <div class="boats-status-indicator">
+        <span class="boats-status-pip"></span>
+        <span>快雷Go全链路零日志（No-Logs）隐私安全规范受保护中</span>
+      </div>
+      <div>
+        <a href="index.html" style="color: var(--color-primary-light);">返回快雷Go首页 &rarr;</a>
+      </div>
+    </div>
+  </div>
+
+  <header class="boats-header">
+    <div class="boats-container boats-nav-wrap">
+      <a href="index.html" class="boats-logo" aria-label="快雷Go首页">
+        <svg class="boats-logo-svg" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="24" cy="24" r="22" stroke="#0284c7" stroke-width="1.8" stroke-dasharray="4 3"/>
+          <path d="M24 6L28 18H36L26 26L30 38L18 24H24L20 14L24 6Z" fill="#0284c7" stroke="#38bdf8" stroke-width="1.5"/>
+          <path d="M10 32C14 28 20 28 24 32C28 36 34 36 38 32" stroke="#f59e0b" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+        <div class="boats-logo-text">
+          <span class="boats-logo-brand">快雷Go</span>
+          <span class="boats-logo-sub">PRIVACY POLICY · 隐私政策</span>
+        </div>
+      </a>
+      
+      <!-- 纯CSS原生汉堡切换器 -->
+      <input type="checkbox" id="boats-toggle" class="boats-nav-toggle" aria-label="展开导航菜单">
+      <label for="boats-toggle" class="boats-hamburger" aria-label="切换主菜单">
+        <span></span>
+        <span></span>
+        <span></span>
+      </label>
+
+      <nav class="boats-nav-menu">
+        <a href="index.html" class="boats-nav-link">官网首页</a>
+        <a href="index.html#advantages" class="boats-nav-link">专线优势</a>
+        <a href="index.html#streaming-ai" class="boats-nav-link">影音与AI</a>
+        <a href="index.html#pricing" class="boats-nav-link">套餐方案</a>
+        <a href="index.html#faq" class="boats-nav-link">疑难解答</a>
+        <a href="pilot-news.html" class="boats-nav-link">领航资讯</a>
+        <label for="boats-toggle" class="boats-menu-close-btn">✕ 收起导航菜单</label>
+      </nav>
+
+      <div class="boats-nav-actions">
+        <a href="https://ww012.twilightaff.com/#/?code=A56DH1Af" target="_blank" rel="nofollow" class="btn-boats btn-boats-primary">开启极速专线</a>
+      </div>
+    </div>
+    <!-- 移动端专属横向滑动导航条：保证在手机视口下导航菜单始终醒目可见、永不缺失 -->
+    <nav class="boats-mobile-subnav" aria-label="移动端领航快速导航">
+      <div class="boats-container boats-mobile-subnav-scroll">
+        <a href="index.html" class="boats-subnav-pill">官网首页</a>
+        <a href="index.html#advantages" class="boats-subnav-pill">专线优势</a>
+        <a href="index.html#pricing" class="boats-subnav-pill">套餐方案</a>
+        <a href="index.html#faq" class="boats-subnav-pill">疑难解答</a>
+        <a href="pilot-news.html" class="boats-subnav-pill">领航资讯</a>
+      </div>
+    </nav>
+  </header>
+
+  <div class="boats-page-header">
+    <div class="boats-container">
+      <h1 class="boats-page-title">隐私政策与数据安全</h1>
+      <div class="boats-breadcrumb">
+        <a href="index.html">首页</a> &gt; 隐私政策
+      </div>
+    </div>
+  </div>
+
+  <main class="boats-page-content">
+    <div class="boats-container">
+      <article class="boats-article-card">
+        <h2>1. 严苛的“零用户活动日志”政策 (Zero-Logs Commitment)</h2>
+        <p>
+          快雷Go团队深知网络隐私对每一位用户的重要性。我们在此做出最严肃的公开承诺：<strong>快雷Go绝对不收集、不记录、不监控、不存储任何用户的网络行为活动日志（No Activity Logs）</strong>。
+        </p>
+        <p>具体而言，我们的专线服务器集群绝不记录以下任何信息：</p>
+        <ul>
+          <li><strong>您所访问的具体网址或目标IP地址</strong>：包括您打开的网页、观看的流媒体视频、调用的API端点等；</li>
+          <li><strong>您传输的通信内容或数据包负载</strong>：数据包在客户端与服务端之间通过AEAD算法端到端加密，中继节点无从解密亦无缓存；</li>
+          <li><strong>您每次连接建立与断开的时间戳日志</strong>；</li>
+          <li><strong>您的真实公网物理IP地址与设备物理MAC标识</strong>；</li>
+          <li><strong>您的任何DNS解析请求记录</strong>（我们采用纯内网无污染DoH/DoT加密递归解析，解析记录在RAM中即时销毁）。</li>
+        </ul>
+
+        <h2>2. 内存无盘化运行架构 (RAM-Only Infrastructure)</h2>
+        <p>
+          为从技术底层彻底杜绝数据泄露隐患，快雷Go的全球核心骨干节点均部署了自主开发的内存自愈操作系统（RAM-Only OS）。所有节点服务器的硬盘不作为持久化日志存储载体，所有路由分流逻辑均在易失性内存（RAM）中运算，服务器一旦重启或断电，内存数据瞬间彻底归零，任何第三方均无法通过硬件取证获取历史痕迹。
+        </p>
+
+        <h2>3. 平台仅收集的极简基础账户数据</h2>
+        <p>
+          为了维护用户账户的基本存续与计费履约，我们仅在用户注册与购买时处理最少必要量的信息：
+        </p>
+        <ul>
+          <li><strong>注册邮箱地址</strong>：用于账号登录、密码重置及重要网络维护公告的通知；</li>
+          <li><strong>套餐订购记录与总流量消耗汇总</strong>：仅记录用户当月套餐的已消耗流量计费总数（如已用 45.2GB/380GB），不包含任何流量用途拆分；</li>
+          <li><strong>支付交易流水凭证号</strong>：用于确认第三方支付结算完成状态，我们不接触亦不保存用户的任何银行卡号、信用卡CVV等金融机密。</li>
+        </ul>
+
+        <h2>4. 密码学加固与传输安全</h2>
+        <p>
+          快雷Go全链路支持现代前向保密（Forward Secrecy）标准，采用X25519密钥交换与AES-256-GCM / ChaCha20-Poly1305硬件级加解密套件。即便某个通信会话的临时密钥被捕获，历史与后续会话依然处于绝对加密保护之下。
+        </p>
+
+        <h2>5. 隐私政策的独立性与监督</h2>
+        <p>
+          快雷Go不会将用户的任何基础数据出售、出租或与商业广告联盟共享。我们随时接受全球极客用户的合规监督与技术检验。如您对本隐私政策有任何疑问，可通过在线工单直接联系我们的安全合规小组。
+        </p>
+      </article>
+    </div>
+  </main>
+
+  <footer class="boats-footer">
+    <div class="boats-container">
+      <ul class="boats-footer-links">
+        <li><a href="sitemap.html" class="boats-footer-link">网站地图</a></li>
+        <li><a href="about.html" class="boats-footer-link">关于我们</a></li>
+        <li><a href="terms.html" class="boats-footer-link">服务条款</a></li>
+        <li><a href="privacy.html" class="boats-footer-link">隐私政策</a></li>
+      </ul>
+      <div class="boats-copyright">
+        &copy; 2026 快雷Go (KuaiLeiGo.boats) 保留所有权利
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

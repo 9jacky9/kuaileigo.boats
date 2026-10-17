@@ -1,0 +1,1219 @@
+/* ===================================================================
+   快雷Go (kuaileigo.boats) - 旗舰领航版样式表
+   设计语言：深海深空双域领航风 (Navigational Zenith / Titanium Velocity)
+   特性：极简原生、极致轻量、零外部字体/脚本阻塞、移动端精准响应式
+   =================================================================== */
+
+:root {
+  --bg-deep: #0a1120;
+  --bg-surface: #0f182c;
+  --bg-card: #13203a;
+  --bg-card-hover: #192a4c;
+  --border-card: #1e3156;
+  --border-focus: #0284c7;
+  --text-main: #f8fafc;
+  --text-muted: #94a3b8;
+  --text-dim: #64748b;
+  --color-primary: #0284c7;
+  --color-primary-light: #38bdf8;
+  --color-amber: #f59e0b;
+  --color-amber-glow: rgba(245, 158, 11, 0.25);
+  --color-sky-glow: rgba(2, 132, 199, 0.2);
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --max-w: 1200px;
+  --font-stack: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+  background-color: var(--bg-deep);
+}
+
+body {
+  font-family: var(--font-stack);
+  background-color: var(--bg-deep);
+  color: var(--text-main);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+a:not(.btn-boats), a:not(.btn-boats):visited {
+  color: var(--color-primary-light);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a:not(.btn-boats):hover, a:not(.btn-boats):focus {
+  color: var(--color-amber);
+}
+
+img, svg {
+  display: block;
+  max-width: 100%;
+}
+
+.boats-container {
+  max-width: var(--max-w);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+/* ================= 顶部状态遥测条 ================= */
+.boats-telemetry-bar {
+  background: #060b14;
+  border-bottom: 1px solid #142036;
+  font-size: 0.8125rem;
+  color: var(--text-muted);
+  padding: 8px 0;
+}
+
+.boats-telemetry-flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.boats-status-indicator {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.boats-status-pip {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #10b981;
+  box-shadow: 0 0 8px #10b981;
+  animation: boatsPulse 2.4s infinite ease-in-out;
+}
+
+@keyframes boatsPulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(0.85); }
+}
+
+.boats-telemetry-data {
+  display: inline-flex;
+  gap: 16px;
+  font-variant-numeric: tabular-nums;
+  color: var(--color-primary-light);
+}
+
+/* ================= 领航主导航栏 ================= */
+.boats-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: rgba(10, 17, 32, 0.96);
+  border-bottom: 1px solid var(--border-card);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.boats-nav-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 72px;
+}
+
+/* Logo 造型：雷光破浪领航箭镞 */
+.boats-logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.boats-logo-svg {
+  width: 44px;
+  height: 44px;
+  flex-shrink: 0;
+}
+
+.boats-logo-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.boats-logo-brand {
+  font-size: 1.45rem;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.boats-logo-brand span {
+  color: var(--color-amber);
+}
+
+.boats-logo-sub {
+  font-size: 0.6875rem;
+  color: var(--text-dim);
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+.boats-nav-menu {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  list-style: none;
+}
+
+.boats-nav-link {
+  font-size: 0.9375rem;
+  color: var(--text-muted);
+  font-weight: 500;
+  transition: color 0.2s ease;
+  position: relative;
+  padding: 6px 0;
+}
+
+.boats-nav-link:hover {
+  color: #ffffff;
+}
+
+.boats-nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+/* 按钮规范与文字高清晰度保证 (彻底杜绝 :visited 状态下的低对比度覆盖) */
+.btn-boats,
+a.btn-boats,
+a.btn-boats:link,
+a.btn-boats:visited {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-family: var(--font-stack);
+  font-size: 0.9375rem;
+  font-weight: 700;
+  padding: 10px 22px;
+  min-height: 44px;
+  border-radius: var(--radius-sm);
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+  text-decoration: none;
+  -webkit-font-smoothing: antialiased;
+}
+
+.btn-boats-primary,
+a.btn-boats-primary,
+a.btn-boats-primary:link,
+a.btn-boats-primary:visited,
+a.btn-boats-primary:hover,
+a.btn-boats-primary:focus,
+a.btn-boats-primary:active {
+  background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%);
+  color: #ffffff !important;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  border-color: #38bdf8;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.45);
+  box-shadow: 0 4px 14px rgba(2, 132, 199, 0.4);
+}
+
+.btn-boats-primary:hover,
+a.btn-boats-primary:hover {
+  background: linear-gradient(135deg, #0369a1 0%, #0284c7 100%);
+  color: #ffffff !important;
+  box-shadow: 0 6px 20px rgba(2, 132, 199, 0.6);
+  transform: translateY(-1px);
+}
+
+.btn-boats-amber,
+a.btn-boats-amber,
+a.btn-boats-amber:link,
+a.btn-boats-amber:visited,
+a.btn-boats-amber:hover,
+a.btn-boats-amber:focus,
+a.btn-boats-amber:active {
+  background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+  color: #060b14 !important;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  border-color: #fbbf24;
+  text-shadow: none;
+  box-shadow: 0 4px 16px rgba(245, 158, 11, 0.4);
+}
+
+.btn-boats-amber:hover,
+a.btn-boats-amber:hover {
+  background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
+  color: #060b14 !important;
+  box-shadow: 0 6px 22px rgba(245, 158, 11, 0.6);
+  transform: translateY(-1px);
+}
+
+.btn-boats-outline,
+a.btn-boats-outline,
+a.btn-boats-outline:link,
+a.btn-boats-outline:visited {
+  background: transparent;
+  color: #ffffff !important;
+  border-color: #38bdf8;
+  font-weight: 600;
+}
+
+.btn-boats-outline:hover,
+a.btn-boats-outline:hover {
+  background: rgba(2, 132, 199, 0.15);
+  border-color: #38bdf8;
+  color: #ffffff !important;
+}
+
+.btn-boats-lg {
+  padding: 14px 28px;
+  font-size: 1.0625rem;
+  min-height: 50px;
+}
+
+/* 移动端汉堡切换器 (纯CSS原生无JS) */
+.boats-nav-toggle {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+  pointer-events: none;
+}
+
+.boats-hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  width: 42px;
+  height: 42px;
+  cursor: pointer;
+  background: rgba(2, 132, 199, 0.08);
+  border: 1px solid var(--border-card);
+  border-radius: var(--radius-sm);
+  padding: 8px;
+  transition: all 0.25s ease;
+  -webkit-tap-highlight-color: transparent;
+  flex-shrink: 0;
+}
+
+.boats-hamburger:hover, .boats-hamburger:active {
+  background: rgba(2, 132, 199, 0.2);
+  border-color: var(--color-primary-light);
+}
+
+.boats-hamburger span {
+  width: 22px;
+  height: 2px;
+  background-color: #ffffff;
+  border-radius: 2px;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  transform-origin: center;
+}
+
+.boats-nav-toggle:checked ~ .boats-hamburger span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+.boats-nav-toggle:checked ~ .boats-hamburger span:nth-child(2) {
+  opacity: 0;
+}
+.boats-nav-toggle:checked ~ .boats-hamburger span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+.boats-menu-close-btn {
+  display: none;
+}
+
+.boats-mobile-subnav {
+  display: none;
+}
+
+/* ================= Hero 区域：领航重器分栏 ================= */
+.boats-hero {
+  position: relative;
+  padding: 80px 0 70px;
+  overflow: hidden;
+  border-bottom: 1px solid var(--border-card);
+  background: radial-gradient(circle at 75% 30%, rgba(2, 132, 199, 0.12) 0%, rgba(10, 17, 32, 0) 65%);
+}
+
+.boats-hero-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  align-items: center;
+  gap: 50px;
+}
+
+.boats-hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(2, 132, 199, 0.12);
+  border: 1px solid rgba(56, 189, 248, 0.3);
+  padding: 6px 14px;
+  border-radius: var(--radius-sm);
+  font-size: 0.8125rem;
+  color: var(--color-primary-light);
+  margin-bottom: 22px;
+}
+
+.boats-badge-tag {
+  background: var(--color-amber);
+  color: #0b1120;
+  font-weight: 800;
+  font-size: 0.6875rem;
+  padding: 2px 6px;
+  border-radius: 2px;
+  letter-spacing: 0.5px;
+}
+
+.boats-hero-title {
+  font-size: 3.1rem;
+  font-weight: 800;
+  line-height: 1.18;
+  letter-spacing: -1px;
+  color: #ffffff;
+  margin-bottom: 20px;
+}
+
+.boats-title-gradient {
+  background: linear-gradient(135deg, #38bdf8 0%, #f59e0b 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.boats-hero-desc {
+  font-size: 1.125rem;
+  color: var(--text-muted);
+  line-height: 1.7;
+  margin-bottom: 32px;
+  max-width: 580px;
+}
+
+.boats-hero-actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-bottom: 40px;
+}
+
+/* Hero 时延遥测 HUD */
+.boats-hud-strip {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  padding: 16px 20px;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-card);
+  border-left: 3px solid var(--color-amber);
+  border-radius: var(--radius-sm);
+}
+
+.boats-hud-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.boats-hud-label {
+  font-size: 0.75rem;
+  color: var(--text-dim);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 4px;
+}
+
+.boats-hud-value {
+  font-size: 1.45rem;
+  font-weight: 700;
+  color: #ffffff;
+  font-variant-numeric: tabular-nums;
+}
+
+.boats-hud-value span {
+  font-size: 0.8125rem;
+  font-weight: 400;
+  color: var(--color-amber);
+  margin-left: 2px;
+}
+
+/* 右侧罗盘仪矢量舞台 */
+.boats-compass-stage {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.boats-compass-svg {
+  width: 100%;
+  max-width: 420px;
+  height: auto;
+  filter: drop-shadow(0 0 24px rgba(2, 132, 199, 0.2));
+}
+
+.boats-radar-sweep {
+  transform-origin: 200px 200px;
+  animation: radarSpin 12s linear infinite;
+}
+
+@keyframes radarSpin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* ================= 公共区块头部 ================= */
+.boats-section {
+  padding: 80px 0;
+  border-bottom: 1px solid var(--border-card);
+}
+
+.boats-section-header {
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto 54px;
+}
+
+.boats-section-tag {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--color-amber);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.boats-section-title {
+  font-size: 2.25rem;
+  font-weight: 800;
+  color: #ffffff;
+  letter-spacing: -0.5px;
+  margin-bottom: 14px;
+}
+
+.boats-section-subtitle {
+  font-size: 1.0625rem;
+  color: var(--text-muted);
+}
+
+/* ================= 核心优势卡片组 (4列) ================= */
+.boats-grid-4 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 22px;
+}
+
+.boats-card-telemetry {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-card);
+  border-radius: var(--radius-md);
+  padding: 28px 22px;
+  position: relative;
+  transition: all 0.25s ease;
+  overflow: hidden;
+}
+
+.boats-card-telemetry::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: transparent;
+  transition: background 0.25s ease;
+}
+
+.boats-card-telemetry:hover {
+  background: var(--bg-card-hover);
+  border-color: var(--border-focus);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.4);
+}
+
+.boats-card-telemetry:hover::before {
+  background: linear-gradient(90deg, var(--color-primary), var(--color-amber));
+}
+
+.boats-icon-wrapper {
+  width: 52px;
+  height: 52px;
+  background: rgba(2, 132, 199, 0.12);
+  border: 1px solid rgba(56, 189, 248, 0.25);
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.boats-card-index {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--text-dim);
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 1px;
+}
+
+.boats-card-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 12px;
+}
+
+.boats-card-desc {
+  font-size: 0.9375rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+/* ================= 影音与AI卡片组 (3列) ================= */
+.boats-grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.boats-card-feature {
+  background: var(--bg-card);
+  border: 1px solid var(--border-card);
+  border-radius: var(--radius-md);
+  padding: 30px 24px;
+  transition: all 0.25s ease;
+  position: relative;
+}
+
+.boats-card-feature:hover {
+  border-color: var(--color-primary-light);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 24px rgba(2, 132, 199, 0.15);
+}
+
+.boats-feature-badge {
+  display: inline-block;
+  padding: 4px 10px;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  background: rgba(245, 158, 11, 0.15);
+  color: var(--color-amber);
+  border: 1px solid rgba(245, 158, 11, 0.3);
+  border-radius: 2px;
+  margin-bottom: 14px;
+}
+
+.boats-feature-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 12px;
+}
+
+.boats-feature-desc {
+  font-size: 0.9375rem;
+  color: var(--text-muted);
+  line-height: 1.65;
+  margin-bottom: 18px;
+}
+
+.boats-feature-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px solid var(--border-card);
+  padding-top: 14px;
+  font-size: 0.8125rem;
+  color: var(--color-primary-light);
+}
+
+/* ================= 方案价格表 (3列) ================= */
+.boats-pricing-card {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-card);
+  border-radius: var(--radius-md);
+  padding: 36px 28px;
+  position: relative;
+  transition: all 0.25s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.boats-pricing-popular {
+  background: var(--bg-card);
+  border-color: var(--color-amber);
+  box-shadow: 0 8px 30px rgba(245, 158, 11, 0.18);
+  transform: scale(1.03);
+}
+
+.boats-popular-badge {
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+  color: #0b1120;
+  font-size: 0.75rem;
+  font-weight: 800;
+  padding: 3px 14px;
+  border-radius: 12px;
+  letter-spacing: 1px;
+}
+
+.boats-pricing-name {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 8px;
+}
+
+.boats-pricing-desc {
+  font-size: 0.875rem;
+  color: var(--text-dim);
+  margin-bottom: 24px;
+}
+
+.boats-price-wrap {
+  display: flex;
+  align-items: baseline;
+  gap: 4px;
+  margin-bottom: 24px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--border-card);
+}
+
+.boats-price-currency {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--color-amber);
+}
+
+.boats-price-num {
+  font-size: 2.8rem;
+  font-weight: 800;
+  color: #ffffff;
+  line-height: 1;
+}
+
+.boats-price-period {
+  font-size: 0.875rem;
+  color: var(--text-dim);
+}
+
+.boats-plan-features {
+  list-style: none;
+  margin-bottom: 30px;
+  flex-grow: 1;
+}
+
+.boats-plan-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.9375rem;
+  color: var(--text-muted);
+  margin-bottom: 12px;
+}
+
+.boats-check-icon {
+  width: 16px;
+  height: 16px;
+  color: var(--color-amber);
+  flex-shrink: 0;
+}
+
+.boats-pricing-action {
+  margin-top: auto;
+}
+
+.boats-pricing-action .btn-boats {
+  width: 100%;
+}
+
+/* ================= 疑难解答 FAQ (双列或单列折叠) ================= */
+.boats-faq-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.boats-faq-card {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-card);
+  border-radius: var(--radius-md);
+  padding: 24px 22px;
+}
+
+.boats-faq-q {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.boats-faq-prefix {
+  color: var(--color-amber);
+  font-weight: 800;
+}
+
+.boats-faq-a {
+  font-size: 0.9375rem;
+  color: var(--text-muted);
+  line-height: 1.65;
+  padding-left: 24px;
+}
+
+/* ================= 极客用户口碑 (3列) ================= */
+.boats-review-card {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-card);
+  border-radius: var(--radius-md);
+  padding: 26px 22px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.boats-review-quote {
+  font-size: 0.9375rem;
+  color: var(--text-main);
+  line-height: 1.65;
+  margin-bottom: 20px;
+}
+
+.boats-review-author {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border-top: 1px solid var(--border-card);
+  padding-top: 14px;
+}
+
+.boats-author-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--bg-card);
+  border: 1px solid var(--color-primary-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 0.9375rem;
+  color: var(--color-amber);
+}
+
+.boats-author-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.boats-author-name {
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.boats-author-role {
+  font-size: 0.75rem;
+  color: var(--text-dim);
+}
+
+/* ================= 底部严苛规范 (仅4个中文标题链接) ================= */
+.boats-footer {
+  background: #05080f;
+  border-top: 1px solid var(--border-card);
+  padding: 50px 0 35px;
+  text-align: center;
+}
+
+.boats-footer-brand {
+  margin-bottom: 24px;
+}
+
+.boats-footer-links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 36px;
+  list-style: none;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+}
+
+.boats-footer-link {
+  font-size: 0.9375rem;
+  color: var(--text-muted);
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.boats-footer-link:hover {
+  color: var(--color-amber);
+}
+
+.boats-copyright {
+  font-size: 0.8125rem;
+  color: var(--text-dim);
+}
+
+/* ================= 独立子页面内容样式 (About/Terms/Privacy/Sitemap) ================= */
+.boats-page-header {
+  padding: 60px 0 40px;
+  border-bottom: 1px solid var(--border-card);
+  background: radial-gradient(circle at 50% 0%, rgba(2, 132, 199, 0.15) 0%, rgba(10, 17, 32, 0) 70%);
+  text-align: center;
+}
+
+.boats-page-title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 12px;
+}
+
+.boats-breadcrumb {
+  font-size: 0.875rem;
+  color: var(--text-dim);
+}
+
+.boats-breadcrumb a {
+  color: var(--color-primary-light);
+}
+
+.boats-page-content {
+  padding: 60px 0 80px;
+  max-width: 860px;
+  margin: 0 auto;
+}
+
+.boats-article-card {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-card);
+  border-radius: var(--radius-md);
+  padding: 40px 36px;
+  line-height: 1.8;
+}
+
+.boats-article-card h2 {
+  font-size: 1.55rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 32px 0 16px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--border-card);
+}
+
+.boats-article-card h2:first-child {
+  margin-top: 0;
+}
+
+.boats-article-card h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--color-primary-light);
+  margin: 24px 0 12px;
+}
+
+.boats-article-card p {
+  font-size: 1rem;
+  color: var(--text-muted);
+  margin-bottom: 18px;
+}
+
+.boats-article-card a, .boats-article-card a:visited {
+  color: #38bdf8;
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  text-decoration-color: rgba(56, 189, 248, 0.4);
+  transition: color 0.2s ease, text-decoration-color 0.2s ease;
+}
+
+.boats-article-card a:hover, .boats-article-card a:focus {
+  color: #f59e0b;
+  text-decoration-color: #f59e0b;
+}
+
+.boats-article-card ul, .boats-article-card ol {
+  margin-bottom: 20px;
+  padding-left: 24px;
+  color: var(--text-muted);
+}
+
+.boats-article-card li {
+  margin-bottom: 8px;
+}
+
+.boats-sitemap-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  margin-top: 24px;
+}
+
+.boats-sitemap-box {
+  background: var(--bg-card);
+  border: 1px solid var(--border-card);
+  border-radius: var(--radius-sm);
+  padding: 20px;
+}
+
+.boats-sitemap-box h3 {
+  color: var(--color-amber);
+  margin-top: 0;
+  margin-bottom: 14px;
+  font-size: 1.1rem;
+}
+
+.boats-sitemap-list {
+  list-style: none;
+  padding: 0;
+}
+
+.boats-sitemap-list li {
+  margin-bottom: 10px;
+}
+
+.boats-sitemap-list a {
+  color: var(--text-muted);
+  transition: color 0.2s;
+}
+
+.boats-sitemap-list a:hover {
+  color: #ffffff;
+}
+
+/* ================= 移动端精准响应式 (@media) ================= */
+@media (max-width: 992px) {
+  .boats-nav-wrap {
+    position: static;
+  }
+
+  .boats-hamburger {
+    display: flex;
+  }
+
+  .boats-nav-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    width: 100%;
+    background: rgba(10, 17, 32, 0.98);
+    border-bottom: 2px solid var(--color-primary);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.85);
+    flex-direction: column;
+    padding: 16px 20px 24px;
+    gap: 8px;
+    display: none;
+    z-index: 9999;
+    max-height: calc(100vh - 80px);
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .boats-nav-toggle:checked ~ .boats-nav-menu {
+    display: flex;
+    animation: boatsSlideDown 0.25s ease-out forwards;
+  }
+
+  @keyframes boatsSlideDown {
+    from {
+      opacity: 0;
+      transform: translateY(-8px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .boats-nav-link {
+    display: flex;
+    align-items: center;
+    padding: 12px 16px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--text-main);
+    border-radius: var(--radius-sm);
+    background: rgba(255, 255, 255, 0.03);
+    border-left: 3px solid transparent;
+    transition: all 0.2s ease;
+  }
+
+  .boats-nav-link:hover, .boats-nav-link:active {
+    background: rgba(2, 132, 199, 0.16);
+    color: var(--color-primary-light);
+    border-left-color: var(--color-primary-light);
+    padding-left: 20px;
+  }
+
+  .boats-menu-close-btn {
+    display: block;
+    text-align: center;
+    padding: 10px;
+    margin-top: 10px;
+    font-size: 0.8125rem;
+    color: var(--text-dim);
+    cursor: pointer;
+    border-radius: var(--radius-sm);
+    border-top: 1px solid var(--border-card);
+  }
+
+  .boats-menu-close-btn:hover {
+    color: #ffffff;
+  }
+
+  /* 导航栏全局唯一官方 CTA 按钮：在移动端紧贴汉堡菜单左侧 */
+  .boats-nav-actions {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+    margin-right: 12px;
+  }
+
+  .boats-nav-actions .btn-boats {
+    padding: 7px 14px;
+    font-size: 0.8125rem;
+    min-height: 36px;
+  }
+
+  .boats-mobile-subnav {
+    display: block;
+    background: #060b14;
+    border-bottom: 1px solid var(--border-card);
+    overflow: hidden;
+  }
+
+  .boats-mobile-subnav-scroll {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    overflow-x: auto;
+    white-space: nowrap;
+    padding: 8px 16px;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .boats-mobile-subnav-scroll::-webkit-scrollbar {
+    display: none;
+  }
+
+  .boats-subnav-pill {
+    display: inline-block;
+    padding: 6px 14px;
+    font-size: 0.8125rem;
+    font-weight: 500;
+    color: var(--text-muted);
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid var(--border-card);
+    border-radius: 20px;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    flex-shrink: 0;
+  }
+
+  .boats-subnav-pill:active, .boats-subnav-pill:hover {
+    background: rgba(2, 132, 199, 0.2);
+    color: #ffffff;
+    border-color: var(--color-primary-light);
+  }
+
+  .boats-hero-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    text-align: center;
+  }
+
+  .boats-hero-desc {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .boats-hero-actions {
+    justify-content: center;
+  }
+
+  .boats-compass-stage {
+    order: -1;
+    max-width: 320px;
+    margin: 0 auto;
+  }
+
+  .boats-grid-4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .boats-grid-3 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .boats-pricing-popular {
+    transform: none;
+  }
+}
+
+@media (max-width: 768px) {
+
+  .boats-hero-title {
+    font-size: 2.25rem;
+  }
+
+  .boats-hud-strip {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    text-align: left;
+  }
+
+  .boats-grid-4, .boats-grid-3, .boats-faq-grid, .boats-sitemap-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .boats-hero-actions {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .boats-hero-actions .btn-boats {
+    width: 100%;
+  }
+
+  .boats-footer-links {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .boats-article-card {
+    padding: 24px 18px;
+  }
+}
