@@ -2,10 +2,20 @@
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>从丢包反馈到带宽建模：TCP BBRv3在跨洋高丢包链路中的参数调优 - 快雷Go</title>
   <meta name="description" content="实测对比经典CUBIC与最新BBRv3在10%非拥塞丢包长距离光缆环境下的带宽利用率跃迁，详述BDP计算与滑动窗口调优技巧。">
   <link rel="stylesheet" href="style.css">
+
+<meta property="og:url" content="https://kuaileigo.boats/tcp-bbr-v3-high-throughput-tuning.html">
+<meta property="og:title" content="从丢包反馈到带宽建模：TCP BBRv3在跨洋高丢包链路中的参数调优 - 快雷Go">
+<meta property="og:description" content="实测对比经典CUBIC与最新BBRv3在10%非拥塞丢包长距离光缆环境下的带宽利用率跃迁，详述BDP计算与滑动窗口调优技巧。">
+<meta property="og:site_name" content="快雷Go">
+<meta property="og:type" content="article">
+<meta name="twitter:title" content="从丢包反馈到带宽建模：TCP BBRv3在跨洋高丢包链路中的参数调优 - 快雷Go">
+<meta name="twitter:description" content="实测对比经典CUBIC与最新BBRv3在10%非拥塞丢包长距离光缆环境下的带宽利用率跃迁，详述BDP计算与滑动窗口调优技巧。">
+<link rel="canonical" href="https://kuaileigo.boats/tcp-bbr-v3-high-throughput-tuning.html">
+<script id="landing-maintenance-schema" type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "快雷Go机场", "item": "https://kuaileigo.boats/"}, {"@type": "ListItem", "position": 2, "name": "从丢包反馈到带宽建模：TCP BBRv3在跨洋高丢包链路中的参数调优 - 快雷Go", "item": "https://kuaileigo.boats/tcp-bbr-v3-high-throughput-tuning.html"}]}</script>
 </head>
 <body>
 
@@ -56,7 +66,7 @@
       </nav>
 
       <div class="boats-nav-actions">
-        <a href="https://ww012.twilightaff.com/#/?code=A56DH1Af" target="_blank" rel="nofollow" class="btn-boats btn-boats-primary">开启极速专线</a>
+        <a href="https://ww012.twilightaff.com/#/?code=A56DH1Af" target="_blank" class="btn-boats btn-boats-primary" rel="nofollow noopener sponsored">开启极速专线</a>
       </div>
     </div>
     <!-- 移动端专属横向滑动导航条：保证在手机视口下导航菜单始终醒目可见、永不缺失 -->
